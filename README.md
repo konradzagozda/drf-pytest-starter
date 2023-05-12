@@ -12,6 +12,19 @@ Steps:
 
 1. `F1` > `Dev Containers: Open Folder in Container...`
 2. Enjoy preset development environment with all black / isort / pylint! 🎉
+3. `docker compose up -d`
+
+## Local setup
+
+Requirements:
+
+- docker
+- linux
+
+Steps:
+
+1. `cp env/local.env .env` - prepare env for docker
+2. `docker compose up -d` - start server
 
 ## Running server
 
