@@ -1,0 +1,36 @@
+{
+    // my settings
+    "editor.rulers": [
+        95
+    ],
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    // python related
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
+    "python.formatting.blackArgs": [
+        "--config",
+        "${workspaceFolder}/pyproject.toml"
+    ],
+    "isort.args": [
+        "--settings-path",
+        "${workspaceFolder}/pyproject.toml"
+    ],
+    "isort.check": true,
+    "isort.path": [
+        "${workspaceFolder}/.venv/bin/isort"
+    ],
+    "isort.interpreter": [
+        "${workspaceFolder}/.venv/bin/python"
+    ],
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/src",
+    },
+}

@@ -1,0 +1,36 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/python:3.10",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "tamasfe.even-better-toml",
+                "davidanson.vscode-markdownlint",
+                "yzhang.markdown-all-in-one",
+                "irongeek.vscode-env",
+                // python
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.isort",
+                "njpwerner.autodocstring",
+                "batisteo.vscode-django",
+                // js
+                "dbaeumer.vscode-eslint"
+            ]
+        },
+    },
+    "postStartCommand": "bash prepare-dev.sh; poetry install",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "dockerDashComposeVersion": "v2"
+        }
+    },
+    "forwardedPorts": [
+        5050,
+        5432,
+        8000,
+        8888
+    ]
+}
