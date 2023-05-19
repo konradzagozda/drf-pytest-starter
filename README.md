@@ -42,7 +42,7 @@ You have available:
 ## Running tests
 
 ```sh
-docker compose exec web bash -c "pip install -r test/requirements.txt && pytest"
+docker compose exec web bash -c "cd .. && pip install -r test/requirements.txt && pytest"
 ```
 
 ## Logs
