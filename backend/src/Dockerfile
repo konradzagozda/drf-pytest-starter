@@ -22,3 +22,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY . /app/src/
+
+ENTRYPOINT ["/usr/wait-for-it.sh", "postgres:5432", "--"]
+CMD ["python", "manage.py", "runserver"]

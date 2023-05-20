@@ -19,7 +19,7 @@ Steps:
 Requirements:
 
 - docker
-- linux
+- linux ( didn't test on windows, probably works though! )
 
 Steps:
 
@@ -42,13 +42,22 @@ You have available:
 
 ## Operations
 
-### Commands
+There are vscode tasks defined, to run them press `F1` > `Tasks: Run Task` and select one of:
 
-```sh
-docker compose exec web bash -c "cd .. && pip install -r test/requirements.txt && pytest"
-```
+- `run project`
+- `run tests`
+- `migrate`
+- `makemigrations`
 
-### Tasks
+Add packages:
+
+1. navigate to backend `cd backend` and you can add packages:
+
+- `poetry add <package>`
+- `poetry add <package> --group dev`
+- `poetry add <package> --group test`
+
+`/src/requirements.txt` and `/test/requirements.txt` are generated on pre-commit
 
 ## Logs
 

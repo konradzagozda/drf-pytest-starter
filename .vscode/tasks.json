@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "migrate",
+            "type": "shell",
+            "command": "docker compose run web bash -c 'python manage.py migrate'",
+            "group": "build"
+        },
+        {
+            "label": "makemigrations",
+            "type": "shell",
+            "command": "docker compose run web bash -c 'python manage.py makemigrations'",
+            "group": "build"
+        },
+        {
+            "label": "run tests",
+            "type": "shell",
+            "command": "docker compose run web bash -c 'cd .. && pip install -r test/requirements.txt && python -m pytest'",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "migrate"
+            ]
+        },
+        {
+            "label": "run project",
+            "type": "shell",
+            "command": "docker compose up",
+            "group": "build"
+        }
+    ]
+}
