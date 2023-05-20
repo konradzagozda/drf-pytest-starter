@@ -26,7 +26,8 @@
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "dockerDashComposeVersion": "v2"
-        }
+        },
+        "ghcr.io/devcontainers/features/node:1": {}
     },
     "forwardedPorts": [
         5050,
