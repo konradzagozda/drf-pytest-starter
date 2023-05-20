@@ -3,10 +3,10 @@ version: '3.9'
 services:
   web:
     build:
-      context: src
+      context: backend/src
     command: /usr/wait-for-it.sh postgres:5432 -- python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./:/app
+      - ./backend:/app
     ports:
       - "8000:8000"
     depends_on:
@@ -43,7 +43,7 @@ services:
   coverage:
     image: halverneus/static-file-server
     volumes:
-      - ./htmlcov:/web
+      - ./.htmlcov:/web
     ports:
       - "8888:8080"
     restart: unless-stopped

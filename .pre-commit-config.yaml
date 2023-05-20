@@ -10,11 +10,11 @@ repos:
     hooks:
     -   id: poetry-export
         name: poetry export
-        entry: poetry export -f requirements.txt --output ./src/requirements.txt --without-hashes
+        entry: bash -c "cd backend && poetry export -f requirements.txt --output ./src/requirements.txt --without-hashes"
         language: system
         pass_filenames: false
     -   id: poetry-export
         name: poetry export
-        entry: poetry export -f requirements.txt --output ./test/requirements.txt --without-hashes --with test
+        entry: bash -c "cd backend && poetry export -f requirements.txt --output ./test/requirements.txt --without-hashes --with test"
         language: system
         pass_filenames: false

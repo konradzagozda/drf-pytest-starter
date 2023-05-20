@@ -21,7 +21,7 @@
             ]
         },
     },
-    "postStartCommand": "bash prepare-dev.sh; poetry install",
+    "postStartCommand": "bash prepare-dev.sh && cd backend && poetry install",
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/devcontainers/features/docker-in-docker:2": {

@@ -39,11 +39,15 @@ You have available:
 - <localhost:5432> - postgres instance
 - <localhost:5050> - pgadmin (`postgres@postgres.com` / `postgres`)
 
-## Running tests
+## Operations
+
+### Commands
 
 ```sh
 docker compose exec web bash -c "cd .. && pip install -r test/requirements.txt && pytest"
 ```
+
+### Tasks
 
 ## Logs
 
