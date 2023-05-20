@@ -44,18 +44,16 @@ You have available:
 
 There are vscode tasks defined, to run them press `F1` > `Tasks: Run Task` and select one of:
 
-- `run project`
-- `run tests`
-- `migrate`
-- `makemigrations`
+- `run project` or cmd `docker compose up -d`
+- `run tests` or cmd `docker compose exec web bash -c "cd .. && pip install -r test/requirements.txt && python -m pytest"`
+- `migrate` or cmd `cd backend/src && python manage.py migrate`
+- `makemigrations` or cmd `backend/src && python manage.py makemigrations`
 
 Add packages:
 
-1. navigate to backend `cd backend` and you can add packages:
-
-- `poetry add <package>`
-- `poetry add <package> --group dev`
-- `poetry add <package> --group test`
+- `cd backend && poetry add <package>`
+- `cd backend && poetry add <package> --group dev`
+- `cd backend && poetry add <package> --group test`
 
 `/src/requirements.txt` and `/test/requirements.txt` are generated on pre-commit
 
