@@ -43,7 +43,7 @@ services:
   coverage:
     image: halverneus/static-file-server
     volumes:
-      - ./htmlcov:/web
+      - ./backend/htmlcov:/web
     ports:
       - "8888:8080"
     restart: unless-stopped
