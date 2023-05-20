@@ -35,6 +35,7 @@ docker compose up -d
 You have available:
 
 - <localhost:8000> - django server
+- <localhost:8000/api/schema/swagger> - swagger documentation
 - <localhost:8888> - last code coverage html report
 - <localhost:5432> - postgres instance
 - <localhost:5050> - pgadmin (`postgres@postgres.com` / `postgres`)
