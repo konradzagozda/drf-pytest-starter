@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  web:
+  backend:
     build:
       context: backend/src
     command: python manage.py runserver 0.0.0.0:8000
@@ -13,6 +13,16 @@ services:
       - postgres
     env_file:
       - .env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
     restart: unless-stopped
 
   postgres:

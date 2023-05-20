@@ -45,7 +45,7 @@ You have available:
 There are vscode tasks defined, to run them press `F1` > `Tasks: Run Task` and select one of:
 
 - `run project` or cmd `docker compose up -d`
-- `run tests` or cmd `docker compose exec web bash -c "cd .. && pip install -r test/requirements.txt && python -m pytest"`
+- `run tests` or cmd `docker compose exec backend bash -c "cd .. && pip install -r test/requirements.txt && python -m pytest"`
 - `migrate` or cmd `cd backend/src && python manage.py migrate`
 - `makemigrations` or cmd `backend/src && python manage.py makemigrations`
 
