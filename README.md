@@ -19,7 +19,7 @@ Steps:
 Requirements:
 
 - docker
-- linux ( didn't test on windows, probably works though! )
+- linux
 
 Steps:
 
