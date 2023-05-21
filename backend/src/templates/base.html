@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your App{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {% block extrahead %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header>
+        <nav class="flex items-center justify-between bg-gray-200 p-4">
+            <h1 class="text-xl font-semibold">Your App</h1>
+            <ul class="flex space-x-4">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'password_change' %}" class="text-blue-500 hover:text-blue-700">Change Password</a></li>
+                    <li><a href="{% url 'profile' %}" class="text-blue-500 hover:text-blue-700">Profile</a></li>
+                    <li><a href="{% url 'logout' %}" class="text-blue-500 hover:text-blue-700">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'password_reset' %}" class="text-blue-500 hover:text-blue-700">Reset Password</a></li>
+                    <li><a href="{% url 'login' %}" class="text-blue-500 hover:text-blue-700">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main class="p-6">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="p-6 bg-white shadow text-center absolute bottom-0 w-full">
+        &copy; 2023 Your App
+    </footer>
+    {% block extrabody %}{% endblock %}
+</body>
+</html>
