@@ -22,17 +22,18 @@ from drf_spectacular.views import (
 )
 
 schema_patterns = [
-    path("", SpectacularAPIView.as_view(), name="schema"),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path("swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
     path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
 ]
 
 api_patterns = [
-    path("schema/", include(schema_patterns)),
     path("example_app/", include("example_app.urls")),
 ]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("auth/", include("django.contrib.auth.urls")),
     path("api/", include(api_patterns)),
+    path("", include(schema_patterns)),
 ]
