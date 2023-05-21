@@ -25,6 +25,13 @@ services:
       - "3000:3000"
     restart: unless-stopped
 
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "8025:8025" # web interface
+      - "1025:1025" # SMTP
+    restart: unless-stopped
+
   postgres:
     image: postgres:15
     environment:
