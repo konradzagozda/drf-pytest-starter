@@ -37,5 +37,7 @@
   "python.testing.pytestEnabled": true,
   // frontend
   "prettier.resolveGlobalModules": false,
-  "prettier.prettierPath": "${workspaceFolder}/frontend/node_modules/prettier"
+  "prettier.prettierPath": "${workspaceFolder}/frontend/node_modules/prettier",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true
 }
