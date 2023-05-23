@@ -9,7 +9,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 # Install dependencies
-RUN npm install
+# RUN npm install, # actually not needed because node_modules are mounted into container with the app.
 
 # Bundle app source
 COPY . .

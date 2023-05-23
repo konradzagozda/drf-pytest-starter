@@ -9,3 +9,6 @@ python -m pip install poetry pre-commit
 pre-commit install
 
 cp env/local.env .env
+
+cd frontend && npm install
+chown -R vscode:vscode node_modules

@@ -2,30 +2,23 @@
   // general
   "extensions.ignoreRecommendations": true,
   "editor.rulers": [95],
-  "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
-  "editor.formatOnSave": true,
   "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // backend
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.lintOnSave": true,
   "python.linting.pylintPath": "${workspaceFolder}/backend/.venv/bin/pylint",
-  "python.linting.pylintArgs": [
-    "--rcfile=${workspaceFolder}/backend/pyproject.toml"
-  ],
+  "python.linting.pylintArgs": ["--rcfile=${workspaceFolder}/backend/pyproject.toml"],
   "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "${workspaceFolder}/backend/.venv/bin/black",
-  "python.formatting.blackArgs": [
-    "--config",
-    "${workspaceFolder}/backend/pyproject.toml"
-  ],
-  "isort.args": [
-    "--settings-path",
-    "${workspaceFolder}/backend/pyproject.toml"
-  ],
+  "python.formatting.blackArgs": ["--config", "${workspaceFolder}/backend/pyproject.toml"],
+  "isort.args": ["--settings-path", "${workspaceFolder}/backend/pyproject.toml"],
   "isort.check": true,
   "isort.path": ["${workspaceFolder}/backend/.venv/bin/isort"],
   "isort.interpreter": ["${workspaceFolder}/backend/.venv/bin/python"],
@@ -43,16 +36,6 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   // frontend
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "prettier.resolveGlobalModules": false,
+  "prettier.prettierPath": "${workspaceFolder}/frontend/node_modules/prettier"
 }

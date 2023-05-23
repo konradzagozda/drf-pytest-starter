@@ -1,19 +1,24 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-yaml
-    -   id: check-added-large-files
--   repo: local
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.0-alpha.9-for-vscode
     hooks:
-    -   id: poetry-export
+      - id: prettier
+        # args: ["--config", "frontend/.prettierrc.json"]
+  - repo: local
+    hooks:
+      - id: poetry-export
         name: poetry export
         entry: bash -c "cd backend && poetry export -f requirements.txt --output ./src/requirements.txt --without-hashes"
         language: system
         pass_filenames: false
-    -   id: poetry-export
+      - id: poetry-export
         name: poetry export
         entry: bash -c "cd backend && poetry export -f requirements.txt --output ./test/requirements.txt --without-hashes --with test"
         language: system
