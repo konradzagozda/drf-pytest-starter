@@ -10,16 +10,20 @@ repos:
     rev: v3.0.0-alpha.9-for-vscode
     hooks:
       - id: prettier
-        # args: ["--config", "frontend/.prettierrc.json"]
   - repo: local
     hooks:
-      - id: poetry-export
-        name: poetry export
+      - id: poetry-export-src
+        name: poetry export src
         entry: bash -c "cd backend && poetry export -f requirements.txt --output ./src/requirements.txt --without-hashes"
         language: system
         pass_filenames: false
-      - id: poetry-export
-        name: poetry export
+      - id: poetry-export-test
+        name: poetry export test
         entry: bash -c "cd backend && poetry export -f requirements.txt --output ./test/requirements.txt --without-hashes --with test"
+        language: system
+        pass_filenames: false
+      - id: eslint
+        name: eslint
+        entry: bash -c "cd frontend && npx eslint ."
         language: system
         pass_filenames: false
