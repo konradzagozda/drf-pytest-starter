@@ -1,52 +1,58 @@
 {
-    // my settings
-    "extensions.ignoreRecommendations": true,
-    "editor.rulers": [
-        95
-    ],
-    "files.autoSave": "onFocusChange",
-    "files.insertFinalNewline": true,
-    "editor.formatOnSave": true,
-    "editor.wordWrap": "on",
-    // python related
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.lintOnSave": true,
-    "python.linting.pylintPath": "${workspaceFolder}/backend/.venv/bin/pylint",
-    "python.linting.pylintArgs": [
-        "--rcfile=${workspaceFolder}/backend/pyproject.toml",
-    ],
-    "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "${workspaceFolder}/backend/.venv/bin/black",
-    "python.formatting.blackArgs": [
-        "--config",
-        "${workspaceFolder}/backend/pyproject.toml"
-    ],
-    "isort.args": [
-        "--settings-path",
-        "${workspaceFolder}/backend/pyproject.toml"
-    ],
-    "isort.check": true,
-    "isort.path": [
-        "${workspaceFolder}/backend/.venv/bin/isort"
-    ],
-    "isort.interpreter": [
-        "${workspaceFolder}/backend/.venv/bin/python"
-    ],
-    "terminal.integrated.env.linux": {
-        "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/backend/src",
-        "POSTGRES_HOST": "localhost",
-        "POSTGRES_DB": "postgres",
-        "POSTGRES_USER": "postgres",
-        "POSTGRES_PASSWORD": "postgres",
-        "POSTGRES_PORT": "5432",
-        "DJANGO_SECRET_KEY": "django-insecure-+a-dsrffda_7&45g(m57x0l!dt!i319nc8*-6-2son23tvj27c",
-        "DJANGO_DEBUG": "True"
-    },
-    "python.testing.pytestArgs": [
-        "backend"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
+  // general
+  "extensions.ignoreRecommendations": true,
+  "editor.rulers": [95],
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // backend
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintPath": "${workspaceFolder}/backend/.venv/bin/pylint",
+  "python.linting.pylintArgs": [
+    "--rcfile=${workspaceFolder}/backend/pyproject.toml"
+  ],
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "${workspaceFolder}/backend/.venv/bin/black",
+  "python.formatting.blackArgs": [
+    "--config",
+    "${workspaceFolder}/backend/pyproject.toml"
+  ],
+  "isort.args": [
+    "--settings-path",
+    "${workspaceFolder}/backend/pyproject.toml"
+  ],
+  "isort.check": true,
+  "isort.path": ["${workspaceFolder}/backend/.venv/bin/isort"],
+  "isort.interpreter": ["${workspaceFolder}/backend/.venv/bin/python"],
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${env:PYTHONPATH}:${workspaceFolder}/backend/src",
+    "POSTGRES_HOST": "localhost",
+    "POSTGRES_DB": "postgres",
+    "POSTGRES_USER": "postgres",
+    "POSTGRES_PASSWORD": "postgres",
+    "POSTGRES_PORT": "5432",
+    "DJANGO_SECRET_KEY": "django-insecure-+a-dsrffda_7&45g(m57x0l!dt!i319nc8*-6-2son23tvj27c",
+    "DJANGO_DEBUG": "True"
+  },
+  "python.testing.pytestArgs": ["backend"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  // frontend
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
