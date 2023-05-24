@@ -16,7 +16,9 @@
     "sourceType": "module"
   },
   "plugins": ["react", "jest"],
-  "rules": {},
+  "rules": {
+    "max-len": ["error", { "code": 95 }]
+  },
   "settings": {
     "react": {
       "createClass": "createReactClass", // Regex for Component Factory to use,

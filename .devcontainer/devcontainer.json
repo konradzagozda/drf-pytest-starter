@@ -19,7 +19,7 @@
         // frontend
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "rvest.vs-code-prettier-eslint"
+        "burkeholland.simple-react-snippets"
       ],
       "settings": {
         // my settings
