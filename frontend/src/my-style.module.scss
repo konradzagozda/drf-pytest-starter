@@ -1,6 +1,7 @@
-body {
-  background-color: #282c34;
-  color: white;
+$myColor: DodgerBlue;
+
+.bigblue {
+  color: $myColor;
   padding: 40px;
   font-family: Sans-Serif;
   text-align: center;
