@@ -1,32 +1,25 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import Blogs from "pages/Blogs";
+import Contact from "pages/Contact";
+import Home from "pages/Home";
+import Layout from "pages/Layout";
+import NoPage from "pages/NoPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-function MyForm() {
-  const [myCar, setMyCar] = useState("Volvo");
-
-  const handleChange = (event) => {
-    setMyCar(event.target.value);
-  };
-
-  return (
-    <form>
-      <select name={myCar} onChange={handleChange}>
-        <option value="Volvo">Volvo</option>
-        <option value="Saab">Saab</option>
-        <option value="Fiat">Fiat</option>
-      </select>
-    </form>
-  );
-}
-
 function App() {
-  const cars = ["aksod", "asdoiko", "aksodkao"];
   return (
-    <>
-      <MyForm />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
